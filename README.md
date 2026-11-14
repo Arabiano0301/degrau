@@ -7,7 +7,7 @@
 **Trilhas por nível, questões reais do ENEM, fórmulas explicadas, demonstrações em 3D e gráficos interativos.**
 Tudo roda no navegador: sem cadastro, sem servidor, sem rastreamento.
 
-[![Abrir o app](https://img.shields.io/badge/%E2%96%B6%20Abrir%20o%20app-Degrau-1f9bff?style=for-the-badge)](https://SEU-USUARIO.github.io/degrau/)
+[![Abrir o app](https://img.shields.io/badge/%E2%96%B6%20Abrir%20o%20app-Degrau-1f9bff?style=for-the-badge)](https://Arabiano0301.github.io/degrau/)
 
 ![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-3ddc97)
 ![Tecnologia](https://img.shields.io/badge/tecnologia-HTML%20%2B%20CSS%20%2B%20JS-ff9f43)
@@ -90,4 +90,4 @@ Sugestões de novas demonstrações são bem-vindas.
 
 ## 📄 Licença
 
-[MIT](LICENSE) © 2026 SEU NOME
+[MIT](LICENSE) © 2026 Arabiano0301
