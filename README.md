@@ -16,8 +16,8 @@ Tudo roda no navegador: sem cadastro, sem servidor, sem rastreamento.
 ![ENEM](https://img.shields.io/badge/ENEM-1344%20quest%C3%B5es-facc15)
 
 </div>
-
----
+⚡Prefere algo mais rápido no celular? Use a [versão leve](https://Arabiano0301.github.io/degrau-leve/) (1,6 MB), que não inclui as questões do ENEM.
+</div>
 
 ## ✨ O que tem dentro
 
