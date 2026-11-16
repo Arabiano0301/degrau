@@ -3220,6 +3220,592 @@ for (const k in OLD.oly) {
   });
   OLYX[k] = OLD.oly[k].concat(OLYX[k] || []);
 }
+
+/* ===== Mais problemas de Olimpíadas (adicionados no fim para manter o progresso) ===== */
+OLYX.Explorador.push(...[
+ {
+  "q": "Um relógio digital marca 15:51. Quantos minutos faltam para ele marcar 16:03?",
+  "a": [
+   "12",
+   "22",
+   "9",
+   "14"
+  ],
+  "c": 0,
+  "e": "De 15:51 até 16:00 faltam 9 minutos, e de 16:00 até 16:03 mais 3. Total: 9 + 3 = 12 minutos.",
+  "h": "Chegue primeiro até as 16:00."
+ },
+ {
+  "q": "Quantos números de 1 a 100 têm o algarismo 7 (na dezena ou na unidade)?",
+  "a": [
+   "19",
+   "20",
+   "18",
+   "10"
+  ],
+  "c": 0,
+  "e": "Unidade 7: 7, 17, 27, ..., 97 → 10 números. Dezena 7: 70 a 79 → 10 números. O 77 foi contado duas vezes: 10 + 10 − 1 = 19.",
+  "h": "Cuidado com o 77: ele aparece nas duas listas."
+ },
+ {
+  "q": "Uma barra de chocolate tem 4 × 6 quadradinhos. Quantos cortes retos, pelas linhas, são necessários para separar todos os quadradinhos? (Cada corte atravessa um único pedaço.)",
+  "a": [
+   "23",
+   "10",
+   "24",
+   "20"
+  ],
+  "c": 0,
+  "e": "A barra começa com 1 pedaço e termina com 24. Cada corte aumenta o número de pedaços em exatamente 1. Logo, são 24 − 1 = 23 cortes.",
+  "h": "Quantos pedaços existem a mais depois de cada corte?"
+ },
+ {
+  "q": "A soma das idades de um pai e de seu filho é 50 anos. Daqui a 5 anos, o pai terá o triplo da idade do filho. Qual é a idade atual do filho?",
+  "a": [
+   "10",
+   "8",
+   "12",
+   "15"
+  ],
+  "c": 0,
+  "e": "Filho = f, pai = 50 − f. Daqui a 5 anos: 55 − f = 3 · (f + 5) → 55 − f = 3f + 15 → 40 = 4f → f = 10.",
+  "h": "Escreva a idade de cada um daqui a 5 anos."
+ },
+ {
+  "q": "Um triângulo é dividido em 4 triângulos menores ligando os pontos médios de seus lados. Contando todos os triângulos (os pequenos e o grande), quantos há?",
+  "a": [
+   "5",
+   "4",
+   "6",
+   "8"
+  ],
+  "c": 0,
+  "e": "Há 4 triângulos pequenos e mais 1, o triângulo grande inteiro. Nenhum triângulo médio é formado: 4 + 1 = 5.",
+  "h": "Conte por tamanho: pequenos e grande."
+ },
+ {
+  "q": "Qual é o menor número natural, maior que 1, que dividido por 4, por 5 e por 6 deixa sempre resto 1?",
+  "a": [
+   "61",
+   "60",
+   "121",
+   "31"
+  ],
+  "c": 0,
+  "e": "Se n − 1 é divisível por 4, 5 e 6, então n − 1 é múltiplo de MMC(4, 5, 6) = 60. O menor é n − 1 = 60, então n = 61.",
+  "h": "Subtraia 1 do número que você procura."
+ },
+ {
+  "q": "Quantos números de 3 algarismos têm todos os algarismos pares e diferentes entre si?",
+  "a": [
+   "48",
+   "60",
+   "64",
+   "40"
+  ],
+  "c": 0,
+  "e": "Algarismos pares: 0, 2, 4, 6, 8. Centena: 4 opções (não pode ser 0). Dezena: 4 (sobram 4, contando o 0). Unidade: 3. Total: 4 · 4 · 3 = 48.",
+  "h": "Comece pela centena: ela não pode ser zero."
+ },
+ {
+  "q": "Em uma prova de 20 questões, cada acerto vale 5 pontos e cada erro tira 3 pontos. Ana respondeu todas e fez 52 pontos. Quantas questões ela acertou?",
+  "a": [
+   "14",
+   "12",
+   "16",
+   "13"
+  ],
+  "c": 0,
+  "e": "Se acertou a, errou 20 − a: 5a − 3(20 − a) = 52 → 8a = 112 → a = 14. Conferindo: 70 − 18 = 52.",
+  "h": "Se todas estivessem certas, seriam 100 pontos. Cada erro tira quantos pontos a menos?"
+ },
+ {
+  "q": "Quantas vezes o algarismo 1 aparece ao escrever todos os números de 1 a 50?",
+  "a": [
+   "15",
+   "14",
+   "10",
+   "16"
+  ],
+  "c": 0,
+  "e": "Na unidade: 1, 11, 21, 31, 41 → 5 vezes. Na dezena: 10 a 19 → 10 vezes. Total: 5 + 10 = 15 (o 11 conta duas vezes).",
+  "h": "Conte separadamente as unidades e as dezenas."
+ },
+ {
+  "q": "Um cubo de aresta 3 cm é pintado de vermelho por fora e depois cortado em 27 cubinhos de aresta 1 cm. Quantos cubinhos têm exatamente duas faces pintadas?",
+  "a": [
+   "12",
+   "8",
+   "6",
+   "24"
+  ],
+  "c": 0,
+  "e": "Cubinhos com 2 faces pintadas ficam no meio das arestas do cubo. O cubo tem 12 arestas, e em cada uma há 1 cubinho do meio: 12.",
+  "h": "Onde ficam os cubinhos com duas faces pintadas: nos cantos, nas arestas ou no centro das faces?"
+ },
+ {
+  "q": "Dois ônibus saem juntos do terminal. Um passa a cada 12 minutos e o outro a cada 18 minutos. De quanto em quanto tempo eles saem juntos?",
+  "a": [
+   "36 minutos",
+   "30 minutos",
+   "6 minutos",
+   "216 minutos"
+  ],
+  "c": 0,
+  "e": "Saem juntos nos múltiplos comuns de 12 e 18. O menor é MMC(12, 18) = 36 minutos.",
+  "h": "Liste os múltiplos de 12 e de 18."
+ },
+ {
+  "q": "Uma fila de crianças tem Lia na 5ª posição contando da frente e na 9ª contando de trás. Quantas crianças há na fila?",
+  "a": [
+   "13",
+   "14",
+   "12",
+   "15"
+  ],
+  "c": 0,
+  "e": "Antes de Lia há 4 crianças, depois dela há 8, e há a própria Lia: 4 + 8 + 1 = 13.",
+  "h": "Não conte Lia duas vezes."
+ }
+]);
+OLYX.Estrategista.push(...[
+ {
+  "q": "Em um grupo de 40 pessoas, 25 falam inglês, 18 falam espanhol e 5 não falam nenhum dos dois idiomas. Quantas falam os dois?",
+  "a": [
+   "8",
+   "3",
+   "13",
+   "12"
+  ],
+  "c": 0,
+  "e": "Falam pelo menos um: 40 − 5 = 35. Somando 25 + 18 = 43, passamos de 35 por 8: esses 8 foram contados duas vezes, são os que falam os dois.",
+  "h": "Quantos falam pelo menos um idioma? Compare com 25 + 18."
+ },
+ {
+  "q": "Qual é o algarismo das dezenas de 7²⁰²⁶?",
+  "a": [
+   "4",
+   "9",
+   "0",
+   "2"
+  ],
+  "c": 0,
+  "e": "Os dois últimos algarismos das potências de 7 se repetem a cada 4: 07, 49, 43, 01. Como 2026 = 4 · 506 + 2, termina em 49. O algarismo das dezenas é 4.",
+  "h": "Calcule 7¹, 7², 7³, 7⁴ olhando só os 2 últimos algarismos."
+ },
+ {
+  "q": "Um polígono convexo tem 20 diagonais. Quantos lados ele tem?",
+  "a": [
+   "8",
+   "7",
+   "9",
+   "10"
+  ],
+  "c": 0,
+  "e": "Número de diagonais: n(n − 3)/2. Para n = 8: 8 · 5 / 2 = 20. Portanto o polígono é um octógono, com 8 lados.",
+  "h": "Use d = n(n − 3)/2 e teste valores de n."
+ },
+ {
+  "q": "O preço de um produto aumentou 20% e, em seguida, sofreu um desconto de 20% sobre o novo preço. Em relação ao preço original, o preço final é:",
+  "a": [
+   "4% menor",
+   "igual",
+   "4% maior",
+   "2% menor"
+  ],
+  "c": 0,
+  "e": "Multiplicadores: 1,2 · 0,8 = 0,96. O preço final é 96% do original, ou seja, 4% menor. Os 20% de cima e de baixo incidem sobre valores diferentes.",
+  "h": "Comece com um preço fácil, como R$ 100."
+ },
+ {
+  "q": "Os ângulos de um triângulo estão na razão 2 : 3 : 4. Qual é o maior ângulo?",
+  "a": [
+   "80°",
+   "60°",
+   "90°",
+   "70°"
+  ],
+  "c": 0,
+  "e": "Os ângulos medem 2k, 3k e 4k com 2k + 3k + 4k = 180° → k = 20°. O maior é 4 · 20° = 80°.",
+  "h": "A soma dos ângulos de um triângulo é 180°."
+ },
+ {
+  "q": "Quantos inteiros positivos menores que 100 têm exatamente 3 divisores?",
+  "a": [
+   "4",
+   "3",
+   "5",
+   "25"
+  ],
+  "c": 0,
+  "e": "Só quadrados de números primos têm exatamente 3 divisores (1, p e p²). Com p² < 100: 4, 9, 25 e 49. São 4 números.",
+  "h": "Que tipo de número tem um número ímpar de divisores?"
+ },
+ {
+  "q": "A razão entre dois números é 3/5 e a soma deles é 64. Qual é o menor deles?",
+  "a": [
+   "24",
+   "40",
+   "20",
+   "32"
+  ],
+  "c": 0,
+  "e": "Os números são 3k e 5k, com 8k = 64 → k = 8. O menor é 3 · 8 = 24 (e o maior, 40).",
+  "h": "Escreva os números como 3k e 5k."
+ },
+ {
+  "q": "Duas cartas são retiradas ao acaso de seis cartas numeradas de 1 a 6. Qual é a probabilidade de a soma dos números ser par?",
+  "a": [
+   "2/5",
+   "1/2",
+   "3/5",
+   "1/3"
+  ],
+  "c": 0,
+  "e": "A soma é par quando as duas são pares ou as duas são ímpares. Pares de cartas: C(6,2) = 15. Favoráveis: C(3,2) + C(3,2) = 3 + 3 = 6. Probabilidade: 6/15 = 2/5.",
+  "h": "Soma par = mesma paridade. Conte os pares de cartas."
+ },
+ {
+  "q": "Quantas vezes, em 12 horas (de 0h até 12h, sem contar a segunda 12h), os ponteiros das horas e dos minutos de um relógio se sobrepõem?",
+  "a": [
+   "11",
+   "12",
+   "10",
+   "22"
+  ],
+  "c": 0,
+  "e": "O ponteiro dos minutos dá 12 voltas enquanto o das horas dá 1, então ele passa pelo outro 11 vezes em cada 12 horas (a última coincide com as 12h seguintes, que não contamos).",
+  "h": "O ponteiro dos minutos ultrapassa o das horas uma vez por 'volta a mais' que ele dá."
+ },
+ {
+  "q": "Um ciclista vai de A até B a 20 km/h e volta pelo mesmo caminho a 30 km/h. Qual é a velocidade média em todo o percurso?",
+  "a": [
+   "24 km/h",
+   "25 km/h",
+   "22,5 km/h",
+   "26 km/h"
+  ],
+  "c": 0,
+  "e": "Seja d a distância. Tempo total: d/20 + d/30 = 5d/60 = d/12. Distância total: 2d. Velocidade média: 2d ÷ (d/12) = 24 km/h (não é a média simples).",
+  "h": "A média das velocidades não funciona. Calcule o tempo total com uma distância de 60 km."
+ },
+ {
+  "q": "Quantas soluções inteiras positivas tem a equação x + y + z = 7?",
+  "a": [
+   "15",
+   "21",
+   "35",
+   "10"
+  ],
+  "c": 0,
+  "e": "Escreva 7 pontos em fila e coloque 2 divisórias nos 6 espaços entre eles: C(6,2) = 15 soluções.",
+  "h": "Pense em 7 bolinhas separadas por 2 divisórias."
+ },
+ {
+  "q": "Um quadrado e um triângulo equilátero têm o mesmo perímetro. O lado do triângulo mede 12 cm. Qual é a área do quadrado?",
+  "a": [
+   "81 cm²",
+   "144 cm²",
+   "36 cm²",
+   "108 cm²"
+  ],
+  "c": 0,
+  "e": "Perímetro do triângulo: 3 · 12 = 36 cm. O quadrado tem 4 lados iguais: 36 ÷ 4 = 9 cm. Área: 9² = 81 cm².",
+  "h": "Primeiro ache o lado do quadrado."
+ }
+]);
+OLYX.Analista.push(...[
+ {
+  "q": "Quantos números pares de 3 algarismos distintos podem ser formados com os dígitos 1, 2, 3, 4 e 5?",
+  "a": [
+   "24",
+   "30",
+   "36",
+   "12"
+  ],
+  "c": 0,
+  "e": "A unidade deve ser 2 ou 4 (2 opções). Depois escolhem-se a centena (4 opções restantes) e a dezena (3): 2 · 4 · 3 = 24.",
+  "h": "Comece escolhendo o algarismo das unidades."
+ },
+ {
+  "q": "Se log₂ x = 5, quanto vale log₄ x?",
+  "a": [
+   "5/2",
+   "10",
+   "25",
+   "3"
+  ],
+  "c": 0,
+  "e": "Mudando de base: log₄ x = log₂ x / log₂ 4 = 5 / 2. Conferindo: x = 32 e 4^(5/2) = 2⁵ = 32.",
+  "h": "Use a mudança de base: log₄ x = log₂ x ÷ log₂ 4."
+ },
+ {
+  "q": "As raízes da equação x² − 7x + 10 = 0 são r e s. Quanto vale r² + s²?",
+  "a": [
+   "29",
+   "39",
+   "49",
+   "19"
+  ],
+  "c": 0,
+  "e": "Pelas relações de Girard: r + s = 7 e rs = 10. Então r² + s² = (r + s)² − 2rs = 49 − 20 = 29. (As raízes são 2 e 5: 4 + 25 = 29.)",
+  "h": "Escreva r² + s² usando (r + s)² e rs."
+ },
+ {
+  "q": "Quantos anagramas distintos tem a palavra BANANA?",
+  "a": [
+   "60",
+   "120",
+   "720",
+   "30"
+  ],
+  "c": 0,
+  "e": "São 6 letras com repetições: A aparece 3 vezes e N, 2 vezes. Total: 6! ÷ (3! · 2!) = 720 ÷ 12 = 60.",
+  "h": "Divida pelas repetições: das letras A e das letras N."
+ },
+ {
+  "q": "Qual é a soma dos 20 primeiros termos da progressão aritmética de primeiro termo 3 e razão 2?",
+  "a": [
+   "440",
+   "400",
+   "420",
+   "460"
+  ],
+  "c": 0,
+  "e": "a₂₀ = 3 + 19 · 2 = 41. Soma = 20 · (3 + 41) ÷ 2 = 440.",
+  "h": "Ache o 20º termo e depois use a soma de Gauss."
+ },
+ {
+  "q": "Um número de dois algarismos tem soma dos algarismos 11. Invertendo a ordem dos algarismos, o número aumenta em 27. Qual é o número?",
+  "a": [
+   "47",
+   "38",
+   "56",
+   "29"
+  ],
+  "c": 0,
+  "e": "Seja 10a + b. Invertido: 10b + a. A diferença é 9(b − a) = 27 → b − a = 3. Com a + b = 11: b = 7 e a = 4. O número é 47 (e 74 − 47 = 27).",
+  "h": "A diferença entre o número invertido e o original é 9 vezes a diferença dos algarismos."
+ },
+ {
+  "q": "Quantos subconjuntos (incluindo o vazio e o próprio conjunto) tem o conjunto {1, 2, 3, 4, 5}?",
+  "a": [
+   "32",
+   "25",
+   "31",
+   "120"
+  ],
+  "c": 0,
+  "e": "Cada elemento está dentro ou fora do subconjunto: 2 escolhas por elemento. Total: 2⁵ = 32.",
+  "h": "Para cada elemento, quantas decisões você toma?"
+ },
+ {
+  "q": "Qual é o valor de sen 30° + cos 60° + tg 45°?",
+  "a": [
+   "2",
+   "1",
+   "3/2",
+   "√3"
+  ],
+  "c": 0,
+  "e": "sen 30° = 1/2, cos 60° = 1/2 e tg 45° = 1. Soma: 1/2 + 1/2 + 1 = 2.",
+  "h": "Lembre dos valores dos ângulos notáveis (30°, 45°, 60°)."
+ },
+ {
+  "q": "Em um triângulo retângulo, os catetos medem 5 e 12. Qual é o raio da circunferência inscrita?",
+  "a": [
+   "2",
+   "3",
+   "2,5",
+   "4"
+  ],
+  "c": 0,
+  "e": "A hipotenusa mede 13. Em um triângulo retângulo, o raio da inscrita é r = (a + b − c) ÷ 2 = (5 + 12 − 13) ÷ 2 = 2.",
+  "h": "Use r = (cateto + cateto − hipotenusa) ÷ 2, ou área = r · semiperímetro."
+ },
+ {
+  "q": "Quantos pares ordenados (x, y) de inteiros não negativos satisfazem 3x + 2y = 24?",
+  "a": [
+   "5",
+   "4",
+   "8",
+   "9"
+  ],
+  "c": 0,
+  "e": "Como 24 e 2y são pares, 3x tem que ser par, então x é par: x = 0, 2, 4, 6, 8 → y = 12, 9, 6, 3, 0. São 5 pares.",
+  "h": "Para que valores de x o número 24 − 3x é par e não negativo?"
+ },
+ {
+  "q": "Qual é o resto da divisão de 3¹⁰⁰ por 7?",
+  "a": [
+   "4",
+   "1",
+   "2",
+   "5"
+  ],
+  "c": 0,
+  "e": "Os restos de 3, 9, 27, 81, ... por 7 se repetem a cada 6: 3, 2, 6, 4, 5, 1. Como 100 = 6 · 16 + 4, o resto de 3¹⁰⁰ é o 4º da lista: 4.",
+  "h": "Calcule os restos de 3¹, 3², 3³... até repetir."
+ },
+ {
+  "q": "Se f(x) = 2x + 3 e g(x) = x², quanto vale f(g(2)) + g(f(2))?",
+  "a": [
+   "60",
+   "52",
+   "49",
+   "77"
+  ],
+  "c": 0,
+  "e": "g(2) = 4 e f(4) = 11. f(2) = 7 e g(7) = 49. Soma: 11 + 49 = 60.",
+  "h": "Resolva de dentro para fora."
+ }
+]);
+OLYX.Mestre.push(...[
+ {
+  "q": "Quantos divisores positivos tem o número 720?",
+  "a": [
+   "30",
+   "24",
+   "36",
+   "20"
+  ],
+  "c": 0,
+  "e": "720 = 2⁴ · 3² · 5. O número de divisores é (4 + 1)(2 + 1)(1 + 1) = 5 · 3 · 2 = 30.",
+  "h": "Fatore 720 em primos."
+ },
+ {
+  "q": "Com quantos zeros termina o número 100! (fatorial de 100)?",
+  "a": [
+   "24",
+   "20",
+   "25",
+   "22"
+  ],
+  "c": 0,
+  "e": "Cada zero vem de um fator 10 = 2 · 5, e há mais fatores 2 que 5. Contando os 5: 100/5 + 100/25 = 20 + 4 = 24 zeros.",
+  "h": "Conte quantos fatores 5 existem (lembre dos múltiplos de 25)."
+ },
+ {
+  "q": "Quantos inteiros de 1 a 200 são divisíveis por 3 ou por 5, mas não por 15?",
+  "a": [
+   "80",
+   "93",
+   "106",
+   "66"
+  ],
+  "c": 0,
+  "e": "Múltiplos de 3: 66. De 5: 40. De 15: 13. Divisíveis por 3 mas não por 15: 66 − 13 = 53. Por 5 mas não por 15: 40 − 13 = 27. Total: 53 + 27 = 80.",
+  "h": "Use inclusão-exclusão, retirando os múltiplos de 15."
+ },
+ {
+  "q": "Qual é a soma dos algarismos do número 2¹⁰ · 5¹²?",
+  "a": [
+   "7",
+   "10",
+   "12",
+   "25"
+  ],
+  "c": 0,
+  "e": "2¹⁰ · 5¹² = 2¹⁰ · 5¹⁰ · 5² = 10¹⁰ · 25 = 25 seguido de 10 zeros. A soma dos algarismos é 2 + 5 = 7.",
+  "h": "Junte pares de 2 e 5 para formar potências de 10."
+ },
+ {
+  "q": "De quantas maneiras 4 casais podem se sentar em volta de uma mesa redonda com 8 lugares, de modo que cada casal fique junto? (Duas disposições que coincidem por rotação são iguais.)",
+  "a": [
+   "96",
+   "48",
+   "192",
+   "24"
+  ],
+  "c": 0,
+  "e": "Trate cada casal como um bloco: 4 blocos em círculo → (4 − 1)! = 6 maneiras. Dentro de cada bloco, o casal pode trocar de lugar: 2⁴ = 16. Total: 6 · 16 = 96.",
+  "h": "Primeiro arrume os casais como blocos, depois conte as trocas dentro de cada casal."
+ },
+ {
+  "q": "Quantos inteiros de 1 a 1000 são quadrados perfeitos ou cubos perfeitos?",
+  "a": [
+   "38",
+   "41",
+   "31",
+   "35"
+  ],
+  "c": 0,
+  "e": "Quadrados: 31 (até 31² = 961). Cubos: 10 (até 10³ = 1000). São ao mesmo tempo quadrado e cubo as sextas potências: 1, 64 e 729 → 3. Total: 31 + 10 − 3 = 38.",
+  "h": "Use inclusão-exclusão. Quem é quadrado e cubo ao mesmo tempo?"
+ },
+ {
+  "q": "Se x + y = 6 e xy = 5, quanto vale x³ + y³?",
+  "a": [
+   "126",
+   "116",
+   "96",
+   "216"
+  ],
+  "c": 0,
+  "e": "(x + y)³ = x³ + y³ + 3xy(x + y), logo x³ + y³ = 216 − 3 · 5 · 6 = 216 − 90 = 126. (As raízes são 1 e 5: 1 + 125 = 126.)",
+  "h": "Desenvolva (x + y)³."
+ },
+ {
+  "q": "Qual é o menor inteiro positivo n tal que n! (n fatorial) é divisível por 1000?",
+  "a": [
+   "15",
+   "10",
+   "25",
+   "20"
+  ],
+  "c": 0,
+  "e": "1000 = 2³ · 5³. Os fatores 2 sobram, então precisamos de três fatores 5. Até 14! há só dois (5 e 10). Em 15! aparece o terceiro (15). Logo n = 15.",
+  "h": "Conte os fatores 5 em n! para vários valores de n."
+ },
+ {
+  "q": "Qual é o menor número natural que dividido por 7 deixa resto 3 e dividido por 11 deixa resto 5?",
+  "a": [
+   "38",
+   "17",
+   "49",
+   "27"
+  ],
+  "c": 0,
+  "e": "Os números com resto 3 na divisão por 7 são 3, 10, 17, 24, 31, 38... Os restos dessa lista na divisão por 11 são 3, 10, 6, 2, 9, 5. O primeiro resto 5 aparece em 38.",
+  "h": "Liste os números que deixam resto 3 por 7 e teste a divisão por 11."
+ },
+ {
+  "q": "Em um polígono regular de 10 lados, quantos triângulos com vértices nos vértices do polígono não têm nenhum lado em comum com o polígono?",
+  "a": [
+   "50",
+   "120",
+   "70",
+   "60"
+  ],
+  "c": 0,
+  "e": "Um triângulo não tem lado do polígono quando seus 3 vértices são não adjacentes. Total de triângulos: C(10,3) = 120. Com exatamente um lado do polígono: 10 lados × 6 outros vértices não vizinhos = 60. Com dois lados (3 vértices consecutivos): 10. Ao todo 70 têm lado em comum, e restam 120 − 70 = 50.",
+  "h": "Conte os triângulos com vértices não consecutivos, ou subtraia os que têm lado no polígono."
+ },
+ {
+  "q": "Quantos pares (a, b) de inteiros positivos satisfazem a² − b² = 45?",
+  "a": [
+   "3",
+   "2",
+   "6",
+   "4"
+  ],
+  "c": 0,
+  "e": "(a − b)(a + b) = 45 com os dois fatores de mesma paridade: 1 · 45, 3 · 15 e 5 · 9 → (a, b) = (23, 22), (9, 6) e (7, 2). São 3 pares.",
+  "h": "Fatore a² − b² como (a − b)(a + b)."
+ },
+ {
+  "q": "Quanto vale 1·2 + 2·3 + 3·4 + ... + 9·10?",
+  "a": [
+   "330",
+   "385",
+   "285",
+   "300"
+  ],
+  "c": 0,
+  "e": "Cada termo é k(k + 1). A soma n(n + 1)(n + 2) ÷ 3, com n = 9, dá 9 · 10 · 11 ÷ 3 = 330.",
+  "h": "Calcule as somas para n = 1, 2, 3 e procure o padrão (ou use k(k+1) = k² + k)."
+ }
+]);
 const OLY_TIERS = [
   { id: "Explorador", d: "Problemas introdut\xF3rios \xB7 6\xBA e 7\xBA ano", ic: "\u{1F9ED}" },
   { id: "Estrategista", d: "Problemas intermedi\xE1rios \xB7 8\xBA e 9\xBA ano", ic: "\u265F\uFE0F" },
@@ -9726,6 +10312,13 @@ function gfOpt(k, v) {
   gfDraw();
   gfSave();
 }
+let GF_HID = [], GF_SCR = 0;
+function gfFsReset() {
+  GF_HID.forEach((n) => n.classList.remove("gfHide", "gfFlat"));
+  GF_HID = [];
+  document.body.classList.remove("gfFsOn");
+  document.body.style.overflow = "";
+}
 function gfFs() {
   const w = document.getElementById("gfWs");
   if (!w) return;
@@ -9734,14 +10327,45 @@ function gfFs() {
     b.classList.toggle("on", on);
     b.textContent = on ? "\u2715" : "\u26F6";
   }
-  if (!on) w.classList.remove("gfPnOn");
-  document.body.style.overflow = on ? "hidden" : "";
+  if (!on) {
+    w.classList.remove("gfPnOn");
+    gfFsReset();
+    window.scrollTo(0, GF_SCR);
+  } else {
+    if (window.innerWidth > 760) w.classList.add("gfPnOn");
+    GF_SCR = window.scrollY || 0;
+    GF_HID = [];
+    const main = document.querySelector(".main");
+    let n = w;
+    while (n && n !== main && n.parentNode) {
+      Array.from(n.parentNode.children).forEach((c) => {
+        if (c !== n) {
+          c.classList.add("gfHide");
+          GF_HID.push(c);
+        }
+      });
+      if (n !== w) {
+        n.classList.add("gfFlat");
+        GF_HID.push(n);
+      }
+      n = n.parentNode;
+    }
+    document.body.classList.add("gfFsOn");
+    document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
+  }
+  if (!window.__gfRz) {
+    window.__gfRz = 1;
+    window.addEventListener("resize", () => { if (document.getElementById("gfCv")) gfDraw(); });
+  }
   gfDraw();
   requestAnimationFrame(gfDraw);
 }
 function gfPn() {
   const w = document.getElementById("gfWs");
   if (w) w.classList.toggle("gfPnOn");
+  gfDraw();
+  requestAnimationFrame(gfDraw);
 }
 function gfImg() {
   const cv = document.getElementById("gfCv");
@@ -9906,7 +10530,7 @@ window.addEventListener("resize", () => {
 function rGraf() {
   const tb = (t, f, l, id, on) => `<button${id ? ` id="${id}"` : ""} class="${on ? "on" : ""}" onclick="${f}" aria-label="${l}" title="${l}">${t}</button>`;
   const ck = (k, t) => `<label class="gfCk"><input type="checkbox" ${GF.o[k] ? "checked" : ""} onchange="gfOpt('${k}')"> ${t}</label>`;
-  return `<style>.gfW{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}.gfCvC{flex:2 1 360px;min-width:0;position:relative}.gfCvC canvas{width:100%;height:460px;height:min(66vh,560px);min-height:320px;display:block;touch-action:none;border-radius:14px;border:1px solid var(--line);background:var(--bg2);outline:none;cursor:crosshair}.gfCvC canvas:focus-visible{border-color:var(--cyan)}.gfTb{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px}.gfTb button{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:1.1rem;cursor:pointer;opacity:.94;padding:0}.gfTb button.on{border-color:var(--cyan);color:var(--cyan)}.gfRo{position:absolute;left:10px;bottom:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font-size:.78rem;color:var(--muted);pointer-events:none}.gfPn{flex:1 1 320px;min-width:0}.gfFull{position:fixed;top:0;left:0;right:0;bottom:0;z-index:80;background:var(--bg);padding:0;margin:0;overflow:hidden;display:block}.gfTb button.gfPnB{display:none}.gfFull .gfTb button.gfPnB{display:block}.gfFull .gfTb{top:max(10px,env(safe-area-inset-top));transition:right .2s}.gfFull.gfPnOn .gfTb{right:calc(min(380px,92vw) + 10px)}.gfFull .gfRo{bottom:max(10px,env(safe-area-inset-bottom))}.gfFull .gfCvC{position:absolute;top:0;left:0;right:0;bottom:0;height:auto;flex:none}.gfFull .gfCvC canvas{height:100%;min-height:0;border:0;border-radius:0}.gfFull .gfPn{position:absolute;z-index:3;top:0;right:0;bottom:0;width:min(380px,92vw);margin:0;overflow:auto;border-radius:0;box-sizing:border-box;transform:translateX(105%);transition:transform .2s;box-shadow:-8px 0 24px rgba(0,0,0,.35)}.gfFull.gfPnOn .gfPn{transform:none}.gfR{display:flex;gap:10px;align-items:flex-start;padding:8px 8px 8px 10px;margin-bottom:8px;border-radius:12px;border:1px solid var(--line);border-left:4px solid var(--c);background:var(--bg2)}.gfDot{width:22px;height:22px;border-radius:50%;border:2px solid;flex:none;margin-top:8px;cursor:pointer;padding:0}.gfI{width:100%;box-sizing:border-box;padding:9px 4px;border:0;background:transparent;color:var(--text);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1rem;outline:none}.gfR:focus-within{border-color:var(--cyan);border-left-color:var(--c)}.gfKb{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}.gfKb .chip{flex:none;white-space:nowrap;min-width:42px;height:38px;justify-content:center}.gfS{margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}.gfM{width:54px;padding:3px 5px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.gfCk{display:flex;gap:8px;align-items:center;font-size:.88rem;padding:6px 0}.gfSet summary{cursor:pointer;padding:6px 0}#gfHelp td{padding:3px 10px 3px 0;vertical-align:top}#gfHelp code{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--cyan)}</style>
+  return `<style>.gfW{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}.gfCvC{flex:2 1 360px;min-width:0;position:relative}.gfCvC canvas{width:100%;height:460px;height:min(66vh,560px);min-height:320px;display:block;touch-action:none;border-radius:14px;border:1px solid var(--line);background:var(--bg2);outline:none;cursor:crosshair}.gfCvC canvas:focus-visible{border-color:var(--cyan)}.gfTb{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px}.gfTb button{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:1.1rem;cursor:pointer;opacity:.94;padding:0}.gfTb button.on{border-color:var(--cyan);color:var(--cyan)}.gfRo{position:absolute;left:10px;bottom:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font-size:.78rem;color:var(--muted);pointer-events:none}.gfPn{flex:1 1 320px;min-width:0}.gfFull{position:fixed;top:0;left:0;right:0;bottom:0;z-index:80;background:var(--bg);padding:0;margin:0;overflow:hidden;display:block}.gfTb button.gfPnB{display:none}.gfFull .gfTb button.gfPnB{display:block}.gfFull .gfTb{top:max(10px,env(safe-area-inset-top));transition:right .2s}.gfFull.gfPnOn .gfTb{right:calc(min(380px,92vw) + 10px)}.gfFull .gfRo{bottom:max(10px,env(safe-area-inset-bottom))}.gfFull .gfCvC{position:absolute;top:0;left:0;right:0;bottom:0;height:auto;flex:none}.gfFull .gfCvC canvas{height:100%;min-height:0;border:0;border-radius:0}.gfFull .gfPn{position:absolute;z-index:3;top:0;right:0;bottom:0;width:min(380px,92vw);margin:0;overflow:auto;border-radius:0;box-sizing:border-box;transform:translateX(105%);transition:transform .2s;box-shadow:-8px 0 24px rgba(0,0,0,.35)}.gfFull.gfPnOn .gfPn{transform:none}.gfFull{position:relative;top:auto;left:auto;right:auto;bottom:auto;z-index:auto;width:100%;height:100vh;height:100dvh}.gfHide{display:none!important}.gfFlat{margin:0!important;padding:0!important;border:0!important;animation:none!important}body.gfFsOn .main{padding:0!important;max-width:none!important}body.gfFsOn .mnav{display:none!important}@media(min-width:761px){.gfFull.gfPnOn .gfCvC{right:min(380px,92vw)}.gfFull.gfPnOn .gfTb{right:10px}.gfFull.gfPnOn .gfPn{box-shadow:none;border-left:1.5px solid var(--edge)}}.gfR{display:flex;gap:10px;align-items:flex-start;padding:8px 8px 8px 10px;margin-bottom:8px;border-radius:12px;border:1px solid var(--line);border-left:4px solid var(--c);background:var(--bg2)}.gfDot{width:22px;height:22px;border-radius:50%;border:2px solid;flex:none;margin-top:8px;cursor:pointer;padding:0}.gfI{width:100%;box-sizing:border-box;padding:9px 4px;border:0;background:transparent;color:var(--text);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1rem;outline:none}.gfR:focus-within{border-color:var(--cyan);border-left-color:var(--c)}.gfKb{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}.gfKb .chip{flex:none;white-space:nowrap;min-width:42px;height:38px;justify-content:center}.gfS{margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}.gfM{width:54px;padding:3px 5px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.gfCk{display:flex;gap:8px;align-items:center;font-size:.88rem;padding:6px 0}.gfSet summary{cursor:pointer;padding:6px 0}#gfHelp td{padding:3px 10px 3px 0;vertical-align:top}#gfHelp code{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--cyan)}</style>
 <div class="card"><div class="lbl">Gr\xE1ficos</div><h2 style="margin:4px 0 6px">Plano cartesiano</h2><p class="sub">Escreva f\xF3rmulas e veja o desenho. <b>Arraste</b> para mover, use <b>pin\xE7a ou roda</b> para ampliar (ou toque duas vezes) e arraste pontos livres. Letras novas, como <b>a</b>, viram controles deslizantes.</p><div class="lbl mt">Exemplos</div><div class="gfKb">${GF_EX.map((e, i) => `<button class="chip" onclick="gfLoad(${i})">${e[0]}</button>`).join("")}</div></div>
 <div class="mt gfW" id="gfWs"><div class="gfCvC"><canvas id="gfCv" tabindex="0" aria-label="Plano cartesiano"></canvas><div class="gfTl" role="toolbar" aria-label="Ferramentas de constru\xE7\xE3o">${GF_TL.map((q) => `<button id="gfT_${q[0]}" class="${GF.tool === q[0] ? "on" : ""}" onclick="gfTool('${q[0]}')" aria-pressed="${GF.tool === q[0]}" aria-label="${q[2]}" title="${q[2]}">${q[1]}</button>`).join("")}<span class="gfSep"></span><button id="gfUn" onclick="gfUndo()" aria-label="Desfazer" title="Desfazer (Ctrl+Z)" disabled>\u21B6</button><button id="gfRe" onclick="gfRedo()" aria-label="Refazer" title="Refazer (Ctrl+Y)" disabled>\u21B7</button></div><div class="gfHint" id="gfHint" role="status" style="display:none"></div><div class="gfTb">${tb("+", "gfZoom(1.25)", "Ampliar")}${tb("\u2212", "gfZoom(1/1.25)", "Diminuir")}${tb("\u2302", "gfHome()", "Voltar ao in\xEDcio")}${tb("\u2922", "gfFit2()", "Enquadrar os objetos")}${tb("\u26F6", "gfFs()", "Tela cheia", "gfFsB")}<button id="gfPnB" class="gfPnB" onclick="gfPn()" aria-label="Entradas e ferramentas" title="Entradas e ferramentas">\u2630</button></div><div class="gfRo" id="gfXY">Toque no gr\xE1fico para ver coordenadas</div></div>
 <div class="card gfPn"><div class="lbl">Entrada</div><div id="gfRows" class="mt"></div><div class="row"><button class="btn sm" onclick="gfAdd()">+ Adicionar</button><button class="btn sec sm" onclick="gfClear()">Limpar tudo</button></div>
@@ -9965,6 +10589,7 @@ function header() {
   if (rk) rk.style.display = S.set.calm ? "none" : "";
 }
 function render() {
+  if (document.body.classList.contains("gfFsOn")) gfFsReset();
   header();
   const f = { home: rHome, learn: rLearn, practice: rPractice, enem: rEnem, oly: rOly, progress: rProgress, errors: rErrors, ranking: rRanking, formulas: rFormulas, demos: rDemos, profile: rProfile }[PAGE];
   $("#p-" + PAGE).innerHTML = f();
